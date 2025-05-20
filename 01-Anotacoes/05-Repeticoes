@@ -1,0 +1,283 @@
+### **O que é for e while?**
+
+As estruturas de repetição **`for`** e **`while`** permitem executar um bloco de código várias vezes, com base em uma condição ou em um conjunto de valores.
+
+---
+
+### **for (Laço Contado)**
+
+O **`for`** é usado para percorrer sequências como **listas, strings, dicionários, ranges, etc.**
+
+🔹**Exemplo com `range()`**
+
+```python
+for i in range(5):
+    print(i)
+
+```
+
+**Saída:**
+
+```
+0
+1
+2
+3
+4
+
+```
+
+✔ `range(n)` gera números de **0 até `n-1`**.
+
+---
+
+### **Especificando Início, Fim e Passo**
+
+```python
+for i in range(1, 10, 2):  # Início=1, Fim=9, Passo=2
+    print(i)
+
+```
+
+**Saída:**
+
+```
+1
+3
+5
+7
+9
+
+```
+
+✔ `range(início, fim, passo)` define um **intervalo customizado**.
+
+---
+
+### **Percorrendo Listas**
+
+```python
+frutas = ["Maçã", "Banana", "Uva"]
+for fruta in frutas:
+    print(fruta)
+
+```
+
+**Saída:**
+
+```
+Maçã
+Banana
+Uva
+
+```
+
+✔ O **`for` percorre diretamente** os elementos da lista.
+
+---
+
+### **Usando `enumerate()` para Índice e Valor**
+
+```python
+frutas = ["Maçã", "Banana", "Uva"]
+for i, fruta in enumerate(frutas):
+    print(f"Índice {i}: {fruta}")
+
+```
+
+**Saída:**
+
+```
+Índice 0: Maçã
+Índice 1: Banana
+Índice 2: Uva
+
+```
+
+✔ **`enumerate()`** retorna o **índice e o valor** ao mesmo tempo.
+
+---
+
+### **Percorrendo Strings**
+
+```python
+for letra in "Python":
+    print(letra)
+
+```
+
+**Saída:**
+
+```
+P
+y
+t
+h
+o
+n
+
+```
+
+✔ Strings podem ser percorridas **caractere por caractere**.
+
+---
+
+### **Percorrendo Dicionários**
+
+```python
+aluno = {"nome": "Ana", "idade": 20, "curso": "TI"}
+for chave, valor in aluno.items():
+    print(f"{chave}: {valor}")
+
+```
+
+**Saída:**
+
+```
+nome: Ana
+idade: 20
+curso: TI
+
+```
+
+✔ **`items()`** retorna **chave e valor** do dicionário.
+
+---
+
+### **while (Laço Condicional)**
+
+O **`while`** executa um bloco de código **enquanto uma condição for verdadeira**.
+
+### 📍 **Exemplo Simples**
+
+```python
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1  # Incremento
+
+```
+
+**Saída:**
+
+```
+0
+1
+2
+3
+4
+
+```
+
+✔ O **`while`** verifica a condição antes de cada iteração.
+
+✔ **Não esquecer do incremento!** Senão o loop será infinito.
+
+---
+
+### **Loop Infinito (Cuidado!)**
+
+```python
+while True:
+    resposta = input("Digite 'sair' para parar: ")
+    if resposta == "sair":
+        break
+
+```
+
+✔ `while True` cria um **loop infinito**, interrompido com `break`.
+
+---
+
+### **`while` com `else`**
+
+```python
+x = 0
+while x < 3:
+    print(x)
+    x += 1
+else:
+    print("Loop finalizado")
+
+```
+
+**Saída:**
+
+```
+0
+1
+2
+Loop finalizado
+
+```
+
+✔ O bloco **`else`** é executado quando o `while` termina normalmente.
+
+---
+
+## **break e continue**
+
+### **`break`: Interrompe o Loop**
+
+```python
+for num in range(10):
+    if num == 5:
+        break  # Para a execução do loop
+    print(num)
+
+```
+
+**Saída:**
+
+```
+0
+1
+2
+3
+4
+
+```
+
+---
+
+### **`continue`: Pula a Iteração Atual**
+
+```python
+for num in range(5):
+    if num == 2:
+        continue  # Pula o número 2
+    print(num)
+
+```
+
+**Saída:**
+
+```
+0
+1
+3
+4
+
+```
+
+---
+
+## **Diferenças entre for e while**
+
+| **Critério** | **for**                                       | **while**                                              |
+| ------------ | --------------------------------------------- | ------------------------------------------------------ |
+| Uso comum    | Percorrer elementos de uma sequência          | Repetição baseada em uma condição                      |
+| Controle     | Iteração automática (range, listas, etc.)     | Controle manual da condição                            |
+| Quando usar? | Quando o número de repetições é **conhecido** | Quando a repetição depende de **uma condição externa** |
+
+---
+
+## **Resumo Final**
+
+✔ **`for`** é ideal para percorrer **listas, strings, dicionários, ranges**.
+
+✔ **`while`** é usado quando **não sabemos o número exato de repetições**.
+
+✔ **`break`** interrompe o loop imediatamente.
+
+✔ **`continue`** pula a iteração atual e continua no próximo ciclo.
